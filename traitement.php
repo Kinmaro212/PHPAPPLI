@@ -28,7 +28,11 @@ if (isset($_POST['submit'])) { // Vérifie si le formulaire a été soumis
 
 $_SESSION['products'][] = $product; // On push les produit dans le tableau product 
 
-/*$_SESSION Contient les données stockées dans la session utilisateur côté serveur.*/
+/* Une session en PHP permet de stocker des données spécifiques à chaque utilisateur grâce à un identifiant unique. 
+Cet identifiant est généralement transmis au navigateur par des cookies de session, permettant de récupérer les données de session existantes. 
+Contrairement aux cookies, les sessions stockent les informations côté serveur, ce qui les rend plus sécurisées. 
+Elles sont temporaires, démarrant avec session_start() et se terminant souvent à la fermeture du navigateur, sauf configuration contraire. 
+La superglobale $_SESSION est un tableau associatif qui contient toutes les données de session après son démarrage.*/
     }
 }
 
