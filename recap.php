@@ -13,7 +13,7 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
     <meta charset="UTF-8">
     <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <title>Récapitulatif des produits</title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <?php 
@@ -29,6 +29,7 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
                         "<th>Prix</th>",
                         "<th>Quantité</th>",
                         "<th>Total</th>",
+                        "<th>Modifier</th>",
                     "</tr>",
                 "</tdead>",
             "<tbody>";
@@ -37,7 +38,7 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
             $totalGeneral = 0;
             
         foreach($_SESSION['products']as $index => $product){
-
+        $totalGeneral+= $product['total'];
             /* On parcourt le tableau $_SESSION['products'] pour numéroter chaque produit dans le tableau HTML 
             et afficher les informations de chaque produit sous forme de tableau. */
 
@@ -61,16 +62,24 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
             variable à modifier,
             nombre de décimales souhaité,
             caractère séparateur décimal,
-            caractère séparateur de milliers5)*/
-
-            $totalGeneral+= $product['total'];
+            caractère séparateur de milliers)*/
+            "<td>".$product['qtt']."</td>",    // Crée une cellule contenant le nom du produit, récupéré depuis le tableau `$qtt`.
+            "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€.</td>";  
+           
 
         }
-            
+        echo "<td>
+        <a href='traitement.php?action=delete&index=$index'>Supprimer</a>
+        <a href='traitement.php?action=up-qtt&index=$index'>+</a>
+        <a href='traitement.php?action=down-qtt&index=$index'>-</a>
+      </td>";
+
+        
          echo "<tr>",
                     "<td colspan = 4>Total général : </td>",
                     //Colspan défini le nombre de colonne 
                     "<td><strong>".number_format($totalGeneral, 2, ",", "nbsp;")."&nbsp;€.</td>",
+                    
         "</tbody>",
         "</table>";
         /*Avant la boucle, initialisation de $totalGeneral à zéro pour cumuler les totaux.
@@ -78,7 +87,22 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
         En fin de boucle, une ligne finale affiche l'intitulé (fusion de 4 colonnes) 
         et le montant formaté de $totalGeneral avec number_format().*/
 
-
+        if (isset($_GET['action'])) {
+            switch ($_GET['action']) {
+                case "delete":
+                    // Code pour supprimer le produit à l'index donné
+                    break;
+                case "clear":
+                    // Code pour vider tous les produits de la session
+                    break;
+                case "up-qtt":
+                    // Code pour augmenter la quantité du produit
+                    break;
+                case "down-qtt":
+                    // Code pour diminuer la quantité du produit
+                    break;
+            }
+        }
         
         //Soit la clé "products" du tableau de session $_SESSION n'existe pas : !isset()
         //Soit cette clé existe mais ne contient aucune donnée : empty()"-->
