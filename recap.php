@@ -14,19 +14,20 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
     <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <title>Récapitulatif des produits</title>
     <link rel="stylesheet" href="style.css">
-    
+<div class="container">
    
 <?php 
 
     include("navbar.php");
 
     if (empty($_SESSION['products'])) { // Si le panier est vide 
-        echo "<p  class='card text-bg-warning mb-3 style=max-width: 18rem' >Panier vide ! <br> Vite remplis le !</p>";
+        echo "<p >Panier vide ! <br> Vite remplis le !</p>";
     }
     else{
-        echo "<table class=table>",
-                "<thead class=table-light>",
+        echo "<table class='uk-table-small'>",
+                "<thead >",
                     "<tr>",
+                        "<th>#</th>",
                         "<th>Nom</th>",
                         "<th>Prix</th>",
                         "<th>Quantité</th>",
@@ -49,7 +50,7 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
            
 
             echo "<tr>",                        // Ouvre une nouvelle ligne dans le tableau HTML pour un produit spécifique.
-                        
+            "<td>".$index ."</td>",            
             "<td>".$product['name']."</td>",    // Crée une cellule contenant le nom du produit, récupéré depuis le tableau `$product`.
                         
             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",  
@@ -65,25 +66,28 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
         nombre de décimales souhaité,
         caractère séparateur décimal,
         caractère séparateur de milliers)*/
+        
         "<td>".$product['qtt']."</td>",    // Crée une cellule contenant le nom du produit, récupéré depuis le tableau `$qtt`.
-         "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€.</td>";  
-        echo "<td>
-        <a type=button class=btn btn-secondary href='traitement.php?action=delete&index=" . $index . "'>Supprimer</a> |
-        <a  type=button class=btn btn-success href='traitement.php?action=up-qtt&index=" . $index . "'>+</a> |
-        <a type=button class=btn btn-danger href='traitement.php?action=down-qtt&index=" . $index . "'>-</a>
-        </td>";
+         "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€.</td>";
+
+        echo "<td>",
+      "<a href='traitement.php?action=delete&id=" . $index . "' uk-icon='icon: trash'></a> | 
+      <a href='traitement.php?action=up-qtt&id=" . $index . "'><span uk-icon='icon: plus-circle'></span></a> | 
+      <a href='traitement.php?action=down-qtt&id=" . $index . "'><span uk-icon='icon: minus-circle'></span></a></td>";
+        
         }
 
-
-        
          echo "<tr>",
+         "<td colspan = 4>Total articles : </td>",
+         "<td><strong>".number_format($total, 0, ",", " ")."&nbsp;</strong></td>",
                     "<td colspan = 4>Total général : </td>",
                     //Colspan défini le nombre de colonne 
                     "<td><strong>".number_format($totalGeneral, 2, ",", " ")."&nbsp;€</strong></td>",
                     //strong pr mettre en gras 
         "</tbody>",
         "</table>
-        <a href='traitement.php?action=Vider le panier'>Vider le panier</a>";
+        <div class=buttonvide>
+        <a class='uk-button uk-button-text' href='traitement.php?action=Vider le panier'>Vider le panier</a></div>";
         /*Avant la boucle, initialisation de $totalGeneral à zéro pour cumuler les totaux.
         Dans la boucle, l'opérateur += ajoute chaque total de produit à $totalGeneral. 
         En fin de boucle, une ligne finale affiche l'intitulé (fusion de 4 colonnes) 
@@ -96,11 +100,14 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier*/
 
     }
 ?>
+    </div>
 </body>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
 </html>
 
 
