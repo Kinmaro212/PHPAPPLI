@@ -1,5 +1,5 @@
 nav {
-    background-color: #333333;
+    background-color: #260058;
     padding: 5px;
 }
 nav ul {
@@ -11,16 +11,16 @@ nav ul li {
     margin-right: 20px;
 }
 nav ul li a {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 18px;
     padding-top: 0.5em;
 }
 nav ul li a:hover {
-    color: #ddd;
+    color: #ffffff;
 }
 a{
-    color: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
     padding-right: 1em;
 }
 .liste{
@@ -49,8 +49,8 @@ height: 100vh;
 
 .badge {
     position: absolute;
-    top: 2px;
-    left: 6px;
+    top: -13px;
+    left: 80px;
     background-color: #ff0000;
     color: white;
     border-radius: 50%;
@@ -58,18 +58,107 @@ height: 100vh;
     font-size: 7px;
     font-weight: bold;
 }
-.uk-button{
-    padding-left:  2em;
-}
+
 
 .uk-table-small{
-    padding: 3em;
+    background-color: #adadad;
+    padding: 1em;
+    color: white;
+    border-radius: 10px;
+
 }
 .buttonvide{
     padding: 3em;
 }
 
 .indexcontainer{
+    width: 30%;
     padding: 3em;
+    margin-left: 3em;
+    margin-top: 3em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #adadad;
+    border-radius: 10px;
+}
+
+.uk-alert-success, .uk-alert-danger {
+    font-size: 16px;      /* Taille du texte */
+    padding: 10px 15px;   /* Espace interne */
+    border-radius: 5px;   /* Coins arrondis */
+    max-width: 400px;     /* Largeur maximale */
+    margin: 10px auto;    /* Centrage de l'alerte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.uk-icon{
+    display: block;
+
+}
+
+.uk-alert-warning{
+
+    width: 30%;
+}
+.uk-alert-success{
+    width: 30%;
+    
+}
+
+.uk-alert-danger{
+    width: 30%;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 80%;  /* Ajustez la largeur comme nécessaire */
+}
+
+.prodretirer {
+    background-color: #ffcc00;
+    color: black;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 15px;
+}
+.indexcontainer.h1{
+    color: white;
+}
+
+p{
+    color: white;
+
+}
+
+.uk-card{
+
+    width: 20%;
+
+
+}
+
+.uk-button{
+    color: white;
+    background-color: white;
+
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  /* Pour l'espacement entre les icônes */
+}
+
+.tab a {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Couleur de l'icône (à personnaliser) */
+}
+
+.tab span {
+    font-size: 20px;  /* Taille de l'icône, ajustable selon vos préférences */
 }
 

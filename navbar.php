@@ -17,10 +17,12 @@ if (isset($_SESSION['products'])) {
 <nav>
     <ul>
         <li class="liste" ><a href="index.php">Accueil</a></li>
-        <li><a href="recap.php" class="panier-link">
+        <li class="liste"><a href="recap.php" class="panier-link">
                 <span class="badge"><?php echo $total; ?></span> <!-- Affiche le nombre total d'articles -->
-                <span uk-icon="icon: cart"></span> <!-- Icône de panier -->
-                Panier
+                <a href=recap.php><span uk-icon="icon: cart">Panier </a> </span> <!-- Icône de panier -->
+                <li class="liste" ><a href=#>Service Client</a></li>
+                <li class="liste" ><a href=#>Carrière</a></li>
+
             </a>
         </li>
     </ul>

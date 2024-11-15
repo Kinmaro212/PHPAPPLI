@@ -49,7 +49,7 @@ foreach($_SESSION['products']as $index => $product){
             </label>
         </p>
         <p>
-            <input type="submit" name="submit" value="Ajouter le produit">
+            <input class="uk-button uk-button-secondary" type="submit" name="submit" value="Ajouter le produit">
         </p>
     </form>
     </div>
