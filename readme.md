@@ -40,14 +40,3 @@ Les onglets supplémentaires comme **Service Client** et **Carrière** sont des 
 - **UIkit** : Framework pour les icônes et les notifications utilisateur.
 
 ---
-
-## 🚀 **Mise en route**
-
-### Pré-requis :
-- Serveur local comme **XAMPP**, **Laragon**, ou **WAMP**.
-- Une installation de **PHP** (version 7.4 ou plus).
-
-### Installation :
-1. **Cloner ou télécharger** le projet :
-   ```bash
-   git clone https://github.com/votre-utilisateur/votre-repo.git
