@@ -1,0 +1,42 @@
+        Une session en PHP permet de stocker des données spécifiques à chaque utilisateur grâce à un identifiant unique. 
+        Cet identifiant est généralement transmis au navigateur par des cookies de session, permettant de récupérer les données de session existantes. 
+        Contrairement aux cookies, les sessions stockent les informations côté serveur, ce qui les rend plus sécurisées. 
+        Elles sont temporaires, démarrant avec session_start() et se terminant souvent à la fermeture du navigateur, sauf configuration contraire. 
+
+        La superglobale $_SESSION est un tableau associatif qui contient toutes les données de session après son démarrage.
+
+
+        Super global :Plusieurs variables prédéfinies en PHP sont "superglobales", 
+        ce qui signifie qu'elles sont disponibles quel que soit le contexte du script. 
+        Il est inutile de faire global $variable; avant d'y accéder dans les fonctions ou les méthodes.
+
+        On a des super global tel que :
+
+        $_GET
+Liée à la méthode HTTP GET, contient tous les paramètres ayant été transmis au serveur
+par l'intermédiaire de l'URL de la requête (Query String Parameters).
+
+    $_POST
+Liée à la méthode HTTP POST, contient toutes les données transmises au serveur par
+l'intermédiaire d'un formulaire (Form Data ou Request Body Parameters).
+
+    $_COOKIE
+Contient les données stockées dans les cookies du navigateur client.
+
+    $_REQUEST
+Regroupe les données transmises par les trois superglobales $_GET, $_POST et $_COOKIE.
+
+    $_SESSION
+Contient les données stockées dans la session utilisateur côté serveur (si cette session a été
+démarrée au préalable).
+
+    $_FILES
+Contient les informations associées à des fichiers uploadés par le client.
+Cette variable est soumise à plusieurs conditions : le client a soumis un formulaire dans
+lequel un champ <input type="file"> était présent (et rempli) ET que la balise <form> dudit
+formulaire comporte l'attribut enctype="multipart/form-data".
+
+    $_ENV et $_SERVER, elles, contiennent des informations relatives à l'environnement
+serveur (comme la version de l'OS, la version d'Apache, de PHP, le chemin du dossier web,
+etc.). Elles ne sont pas concernées par la transmission d'information du client vers le
+serveur, cependant

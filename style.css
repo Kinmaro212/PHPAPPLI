@@ -1,10 +1,13 @@
 nav {
-    background-color: #260058;
-    padding: 5px;
+    background-color: #740afe;
+    height: 2.5em; /* hauteur du parent */
+    
 }
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 4px ;
+    padding-left: 1em;
+
 }
 nav ul li {
     display: inline;
@@ -100,12 +103,12 @@ height: 100vh;
     width: 30%;
 }
 .uk-alert-success{
-    width: 30%;
+    width: 72%;
     
 }
 
 .uk-alert-danger{
-    width: 30%;
+    width: 50%;
 }
 
 .container {

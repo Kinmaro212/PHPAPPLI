@@ -31,7 +31,7 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier */
     
 
     if (empty($_SESSION['products'])) { // Si le panier est vide 
-        echo "<p  class='uk-card uk-card-secondary uk-card-body' style='background-color: #f0f0f0; color: #333; width:30%; border-radius:10px'>Panier vide ! <br> Vite, remplis-le !</p>";
+        echo "<p  class='uk-card uk-card-secondary uk-card-body' style='background-color: #f0f0f0; color: #333; border-radius:10px';>Panier vide ! <br> Vite, remplis-le !</p>";
     } else {
         echo "<table class='uk-table-small'>",
                 "<thead>",
