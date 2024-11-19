@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']); // Supprime le message après l'affichage pour éviter sa persistance
-}  
+
 /* crée une session ou restaure celle trouvée sur le serveur, 
 via l'identifiant de session passé dans une requête GET, POST ou par un cookie */
 
@@ -25,6 +22,10 @@ donc nécessaire d'appeler la fonction session_start() en début de fichier */
 <?php include("navbar.php");?>
 </header>
 <div class="container">
+<?php  if (isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']); // Supprime le message après l'affichage pour éviter sa persistance
+}  ?>
 <main>
 <?php 
 
